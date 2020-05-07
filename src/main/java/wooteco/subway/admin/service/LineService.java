@@ -23,9 +23,9 @@ public class LineService {
         return lineRepository.save(line);
     }
 
-    public Line showLine(Long id) {
-        return lineRepository.findById(id)
-                .orElseThrow(IllegalArgumentException::new);
+    public LineResponse showLine(Long id) {
+        return LineResponse.of(lineRepository.findById(id)
+                .orElseThrow(IllegalArgumentException::new));
     }
 
     public List<LineResponse> showLines() {
