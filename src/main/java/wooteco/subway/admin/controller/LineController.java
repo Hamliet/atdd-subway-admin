@@ -2,10 +2,7 @@ package wooteco.subway.admin.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import wooteco.subway.admin.domain.Line;
 import wooteco.subway.admin.domain.Station;
 import wooteco.subway.admin.dto.LineRequest;
@@ -41,7 +38,7 @@ public class LineController {
     }
 
     @GetMapping("/lines/{id}")
-    public ResponseEntity showLine() {
-        return ResponseEntity.ok().body(lineService.showLines());
+    public ResponseEntity showLine(@PathVariable Long id) {
+        return ResponseEntity.ok().body(lineService.showLine(id));
     }
 }
