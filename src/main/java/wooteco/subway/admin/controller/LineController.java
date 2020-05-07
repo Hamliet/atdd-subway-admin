@@ -40,4 +40,8 @@ public class LineController {
         return ResponseEntity.ok().body(lineService.showLines());
     }
 
+    @GetMapping("/lines/{id}")
+    public ResponseEntity showLine() {
+        return ResponseEntity.ok().body(lineService.showLines());
+    }
 }
